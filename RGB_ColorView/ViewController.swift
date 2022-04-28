@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    weak var delegateColor: BackColorDelegate?
+    
     let viewColors = UIView()
     let labelRed = UILabel()
     let labelGreen = UILabel()
@@ -24,12 +26,14 @@ class ViewController: UIViewController {
     
     let buttonClean = UIButton()
     
+    var colorBack: UIColor?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        viewColors.backgroundColor = .black
+        viewColors.backgroundColor = colorBack
         viewColors.layer.cornerRadius = 10
         viewColors.layer.shadowRadius = 10
         viewColors.layer.shadowOffset = CGSize(width: 0, height: 7)
@@ -39,8 +43,9 @@ class ViewController: UIViewController {
         setupElements()
         setupConstraints()
         setSliderValue()
+        setSlider()
     }
-
+    
     func setupElements() {
         labelRed.text = "Red:"
         labelGreen.text = "Green:"
@@ -56,7 +61,7 @@ class ViewController: UIViewController {
         blueSlider.addTarget(self, action: #selector(blueTapped), for: .valueChanged)
         
         buttonClean.backgroundColor = UIColor(red: CGFloat(0.85), green: CGFloat(0.80), blue: CGFloat(1.00), alpha: 1)
-        buttonClean.setTitle("Reset color", for: .normal)
+        buttonClean.setTitle("Change color", for: .normal)
         buttonClean.setTitleColor(.blue, for: .normal)
         buttonClean.layer.cornerRadius = 10
         buttonClean.layer.shadowRadius = 10
@@ -90,14 +95,21 @@ class ViewController: UIViewController {
         view.addSubview(blueSlider)
         view.addSubview(buttonClean)
     }
-    
+    func setSlider() {
+        guard let colorBack = colorBack else {
+            return
+        }
+
+        let color = CIColor(color: colorBack)
+        
+        redSlider.value = Float(color.red)
+        greenSlider.value = Float(color.green)
+        blueSlider.value = Float(color.blue)
+    }
     @objc func resetTapped() {
-        redSlider.value = 0
-        redValueLabel.text = "0.0"
-        greenSlider.value = 0
-        greenValueLabel.text = "0.0"
-        blueSlider.value = 0
-        blueValueLabel.text = "0.0"
+        delegateColor?.setColorMainView(color: UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1))
+         dismiss(animated: true)
+        
     }
     @objc func redTapped() {
         redValueLabel.text = String(format: "%.2f", redSlider.value)

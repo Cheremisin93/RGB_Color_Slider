@@ -13,6 +13,7 @@
 		EFA0E86D2805CE7500FD80E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA0E86B2805CE7500FD80E7 /* Main.storyboard */; };
 		EFA0E86F2805CE7600FD80E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA0E86E2805CE7600FD80E7 /* Assets.xcassets */; };
 		EFA0E8722805CE7600FD80E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA0E8702805CE7600FD80E7 /* LaunchScreen.storyboard */; };
+		EFEC353F281AD4E200AA2F86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEC353E281AD4E200AA2F86 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EFA0E86E2805CE7600FD80E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFA0E8712805CE7600FD80E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFA0E8732805CE7600FD80E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFEC353E281AD4E200AA2F86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				EFA0E8652805CE7500FD80E7 /* AppDelegate.swift */,
 				EFA0E8672805CE7500FD80E7 /* SceneDelegate.swift */,
 				EFA0E8692805CE7500FD80E7 /* ViewController.swift */,
+				EFEC353E281AD4E200AA2F86 /* MainViewController.swift */,
 				EFA0E86B2805CE7500FD80E7 /* Main.storyboard */,
 				EFA0E86E2805CE7600FD80E7 /* Assets.xcassets */,
 				EFA0E8702805CE7600FD80E7 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				EFA0E86A2805CE7500FD80E7 /* ViewController.swift in Sources */,
 				EFA0E8662805CE7500FD80E7 /* AppDelegate.swift in Sources */,
 				EFA0E8682805CE7500FD80E7 /* SceneDelegate.swift in Sources */,
+				EFEC353F281AD4E200AA2F86 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
